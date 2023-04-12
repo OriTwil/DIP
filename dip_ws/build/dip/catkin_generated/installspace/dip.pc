@@ -1,0 +1,8 @@
+prefix=/home/szf/DIP/dip_ws/install
+
+Name: dip
+Description: Description of dip
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

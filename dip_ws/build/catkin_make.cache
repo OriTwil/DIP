@@ -1,2 +1,2 @@
-
+dip
 -DCATKIN_DEVEL_PREFIX=/home/szf/DIP/dip_ws/devel -DCMAKE_INSTALL_PREFIX=/home/szf/DIP/dip_ws/install -G Unix Makefiles

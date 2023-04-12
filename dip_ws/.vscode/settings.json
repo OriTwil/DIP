@@ -1,0 +1,19 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/szf/ROS/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/szf/ROS/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "files.associations": {
+        "algorithm": "cpp",
+        "dense": "cpp",
+        "geometry": "cpp",
+        "svd": "cpp",
+        "eigenvalues": "cpp",
+        "*.tcc": "cpp",
+        "fstream": "cpp"
+    }
+}
