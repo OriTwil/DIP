@@ -19,7 +19,7 @@
 using namespace cv;
 
 // 空域高斯滤波器函数
-void Gaussian(Mat input, Mat output, Mat sigma)
+void Gaussian(cv::Mat& input, cv::Mat& output, cv::Mat sigma)
 {
     // 检查sigma是否合法
     if (sigma.cols != 2 || sigma.rows != 2 || sigma.type() != CV_64F) {
@@ -35,26 +35,29 @@ void Gaussian(Mat input, Mat output, Mat sigma)
     if (ksizeX % 2 == 0) ksizeX++; // 确保为奇数
     if (ksizeY % 2 == 0) ksizeY++;
     // 调用GaussianBlur函数
-    GaussianBlur(input, output, Size(ksizeX, ksizeY), sigmaX, sigmaY);
+    cv::GaussianBlur(input, output, cv::Size(ksizeX, ksizeY), sigmaX, sigmaY);
 }
 
+
 // 腐蚀函数
-void Dilate(Mat src, Mat tem, Mat dst)
+void Dilate(cv::Mat& src, cv::Mat& tem, cv::Mat& dst)
 {
-    int dilation_size = 2;
-    Mat element = getStructuringElement(MORPH_RECT,
-                      Size(2*dilation_size+1, 2*dilation_size+1),
-                      Point(dilation_size, dilation_size));
+    // int dilation_size = 2;
+    // Mat element = getStructuringElement(MORPH_RECT,
+    //                   Size(2*dilation_size+1, 2*dilation_size+1),
+    //                   Point(dilation_size, dilation_size));
+    Mat element = getStructuringElement(MORPH_RECT, tem.size(), Point(tem.cols/2, tem.rows/2));
     dilate(src, dst, element);
 }
 
 // 膨胀函数
-void Erode(Mat src, Mat tem, Mat dst)
+void Erode(cv::Mat& src, cv::Mat& tem, cv::Mat& dst)
 {
-    int erosion_size = 2;
-    Mat element = getStructuringElement(MORPH_RECT,
-                      Size(2*erosion_size+1, 2*erosion_size+1),
-                      Point(erosion_size, erosion_size));
+    // int erosion_size = 2;
+    // Mat element = getStructuringElement(MORPH_RECT,
+    //                   Size(2*erosion_size+1, 2*erosion_size+1),
+    //                   Point(erosion_size, erosion_size));
+    Mat element = getStructuringElement(MORPH_RECT, tem.size(), Point(tem.cols/2, tem.rows/2));
     erode(src, dst, element);
 }
 
@@ -86,18 +89,22 @@ int main(int argc,char **argv)
 		capture.read(frame);
 		if (frame.empty())
 		{
-			continue;
+			break;
 		}
 
         Mat frIn = frame.clone();// 笔记本
         // Mat frIn = frame(cv::Rect(0,0,frame.cols/2,frame.rows)); // ZED左目图片
         imshow("In",frIn);
 
-        Mat frOut, frFiltered, frDilated, frEroded;
+        Mat frFiltered, frDilated, frEroded;
         // 空域高斯滤波
         Mat sigma = (cv::Mat_<double>(2, 2) << 10, 0, 0, 10);
+        // Mat sigma = (cv::Mat_<double>(3, 3) << 
+        //      1, 2, 1,
+        //      2, 4, 2,
+        //      1, 2, 1);
         Gaussian(frIn, frFiltered, sigma);
-        // imshow("Filtered",frFiltered);
+        imshow("Filtered",frFiltered);
 
         // 腐蚀
         Mat tem = Mat::zeros(3,3,CV_8UC1);
@@ -105,7 +112,8 @@ int main(int argc,char **argv)
         imshow("Dilated",frDilated);
 
         // // 膨胀
-        // Erode(frDilated, tem, frOut);
+        Erode(frFiltered, tem, frEroded);
+        imshow("Eroded",frEroded);
 
         ros::spinOnce();
         waitKey(5);

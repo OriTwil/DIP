@@ -13,6 +13,8 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   tf
   tf2
+  cv_bridge
+  geometry_msgs
 )
 find_package(OpenCV REQUIRED)
 
@@ -188,6 +190,36 @@ target_link_libraries(experiment2
     ${ThirdParty}
     dipLib
 )
+
+add_executable(experiment3 src/experiment3.cpp)
+target_link_libraries(experiment3
+    ${ThirdParty}
+    dipLib
+)
+
+#add_executable(expr1 src/expr1.cpp include/dipLib/expr1.hpp)
+#target_link_libraries(expr1 ${catkin_LIBRARIES} ${OpenCV_LIBS})
+#add_dependencies(expr1 ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+#add_executable(quaternion_test src/quaternion_test.cpp)
+#target_link_libraries(quaternion_test ${catkin_LIBRARIES})
+#add_dependencies(quaternion_test ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+#add_executable(expr2 src/expr2.cpp include/dipLib/expr2.hpp)
+#target_link_libraries(expr2 ${catkin_LIBRARIES} ${OpenCV_LIBS})
+#add_dependencies(expr2 ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+#add_executable(expr3 src/expr3.cpp include/dipLib/expr3.hpp)
+#target_link_libraries(expr3 ${catkin_LIBRARIES} ${OpenCV_LIBS})
+#add_dependencies(expr3 ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+#add_executable(dip8 src/dip8.cpp)
+#target_link_libraries(dip8 ${catkin_LIBRARIES} ${OpenCV_LIBS})
+#add_dependencies(dip8 ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+#add_executable(expr4 src/expr4.cpp include/dipLib/expr4.hpp)
+#target_link_libraries(expr4 ${catkin_LIBRARIES} ${OpenCV_LIBS})
+#add_dependencies(expr4 ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 #############
 ## Install ##
 #############

@@ -213,6 +213,66 @@ dip/fast:
 .PHONY : dip/fast
 
 # Convenience name for target.
+dip/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+.PHONY : dip/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_nodejs: dip/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+sensor_msgs_generate_messages_nodejs/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make dip/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+.PHONY : sensor_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+dip/CMakeFiles/experiment3.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/experiment3.dir/rule
+.PHONY : dip/CMakeFiles/experiment3.dir/rule
+
+# Convenience name for target.
+experiment3: dip/CMakeFiles/experiment3.dir/rule
+
+.PHONY : experiment3
+
+# fast build rule for target.
+experiment3/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/experiment3.dir/build.make dip/CMakeFiles/experiment3.dir/build
+.PHONY : experiment3/fast
+
+# Convenience name for target.
+dip/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+.PHONY : dip/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_lisp: dip/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_lisp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_lisp/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make dip/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+.PHONY : sensor_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+dip/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+.PHONY : dip/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_cpp: dip/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_cpp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_cpp/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make dip/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+.PHONY : sensor_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
 dip/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
 	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 .PHONY : dip/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
@@ -483,6 +543,21 @@ rosgraph_msgs_generate_messages_nodejs/fast:
 .PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
+dip/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+.PHONY : dip/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_eus: dip/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_eus
+
+# fast build rule for target.
+sensor_msgs_generate_messages_eus/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make dip/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+.PHONY : sensor_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
 dip/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
 	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 .PHONY : dip/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
@@ -496,6 +571,21 @@ roscpp_generate_messages_cpp: dip/CMakeFiles/roscpp_generate_messages_cpp.dir/ru
 roscpp_generate_messages_cpp/fast:
 	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make dip/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
+
+# Convenience name for target.
+dip/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+.PHONY : dip/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_py: dip/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_py
+
+# fast build rule for target.
+sensor_msgs_generate_messages_py/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make dip/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+.PHONY : sensor_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 dip/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
@@ -827,6 +917,33 @@ src/experiment2.cpp.s:
 	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/experiment2.dir/build.make dip/CMakeFiles/experiment2.dir/src/experiment2.cpp.s
 .PHONY : src/experiment2.cpp.s
 
+src/experiment3.o: src/experiment3.cpp.o
+
+.PHONY : src/experiment3.o
+
+# target to build an object file
+src/experiment3.cpp.o:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/experiment3.dir/build.make dip/CMakeFiles/experiment3.dir/src/experiment3.cpp.o
+.PHONY : src/experiment3.cpp.o
+
+src/experiment3.i: src/experiment3.cpp.i
+
+.PHONY : src/experiment3.i
+
+# target to preprocess a source file
+src/experiment3.cpp.i:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/experiment3.dir/build.make dip/CMakeFiles/experiment3.dir/src/experiment3.cpp.i
+.PHONY : src/experiment3.cpp.i
+
+src/experiment3.s: src/experiment3.cpp.s
+
+.PHONY : src/experiment3.s
+
+# target to generate assembly for a file
+src/experiment3.cpp.s:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/experiment3.dir/build.make dip/CMakeFiles/experiment3.dir/src/experiment3.cpp.s
+.PHONY : src/experiment3.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -840,6 +957,10 @@ help:
 	@echo "... experiment2"
 	@echo "... drawImageHistogram"
 	@echo "... dip"
+	@echo "... sensor_msgs_generate_messages_nodejs"
+	@echo "... experiment3"
+	@echo "... sensor_msgs_generate_messages_lisp"
+	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_nodejs"
@@ -860,7 +981,9 @@ help:
 	@echo "... actionlib_msgs_generate_messages_cpp"
 	@echo "... actionlib_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
+	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_cpp"
+	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... std_msgs_generate_messages_nodejs"
@@ -890,6 +1013,9 @@ help:
 	@echo "... src/experiment2.o"
 	@echo "... src/experiment2.i"
 	@echo "... src/experiment2.s"
+	@echo "... src/experiment3.o"
+	@echo "... src/experiment3.i"
+	@echo "... src/experiment3.s"
 .PHONY : help
 
 

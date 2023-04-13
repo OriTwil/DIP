@@ -21,8 +21,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/szf/DIP/dip_ws/src/dip/include"
   "/opt/ros/noetic/include"
   "/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
-  "/usr/include/eigen3"
   "/usr/include/opencv4"
+  "/usr/include/eigen3"
   )
 
 # Targets to which this target links.
