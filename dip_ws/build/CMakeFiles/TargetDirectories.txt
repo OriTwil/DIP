@@ -39,6 +39,7 @@
 /home/szf/DIP/dip_ws/build/dip/CMakeFiles/install.dir
 /home/szf/DIP/dip_ws/build/dip/CMakeFiles/list_install_components.dir
 /home/szf/DIP/dip_ws/build/dip/CMakeFiles/edit_cache.dir
+/home/szf/DIP/dip_ws/build/dip/CMakeFiles/experiment4.dir
 /home/szf/DIP/dip_ws/build/dip/CMakeFiles/experiment2.dir
 /home/szf/DIP/dip_ws/build/dip/CMakeFiles/drawImageHistogram.dir
 /home/szf/DIP/dip_ws/build/dip/CMakeFiles/dip.dir

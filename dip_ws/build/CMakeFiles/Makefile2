@@ -79,6 +79,7 @@ clean: dip/clean
 # Directory level rules for directory dip
 
 # Recursive "all" directory target.
+dip/all: dip/CMakeFiles/experiment4.dir/all
 dip/all: dip/CMakeFiles/experiment2.dir/all
 dip/all: dip/CMakeFiles/drawImageHistogram.dir/all
 dip/all: dip/CMakeFiles/dip.dir/all
@@ -94,6 +95,7 @@ dip/preinstall:
 .PHONY : dip/preinstall
 
 # Recursive "clean" directory target.
+dip/clean: dip/CMakeFiles/experiment4.dir/clean
 dip/clean: dip/CMakeFiles/experiment2.dir/clean
 dip/clean: dip/CMakeFiles/drawImageHistogram.dir/clean
 dip/clean: dip/CMakeFiles/dip.dir/clean
@@ -338,7 +340,7 @@ gtest/googlemock/CMakeFiles/gmock_main.dir/all: gtest/googlemock/CMakeFiles/gmoc
 gtest/googlemock/CMakeFiles/gmock_main.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/szf/DIP/dip_ws/build/CMakeFiles --progress-num=15,16 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/szf/DIP/dip_ws/build/CMakeFiles --progress-num=17,18 "Built target gmock_main"
 .PHONY : gtest/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -365,7 +367,7 @@ gtest/googlemock/CMakeFiles/gmock_main.dir/clean:
 gtest/googlemock/CMakeFiles/gmock.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/szf/DIP/dip_ws/build/CMakeFiles --progress-num=13,14 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/szf/DIP/dip_ws/build/CMakeFiles --progress-num=15,16 "Built target gmock"
 .PHONY : gtest/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -392,7 +394,7 @@ gtest/googlemock/CMakeFiles/gmock.dir/clean:
 gtest/googletest/CMakeFiles/gtest_main.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest_main.dir/build.make gtest/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest_main.dir/build.make gtest/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/szf/DIP/dip_ws/build/CMakeFiles --progress-num=19,20 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/szf/DIP/dip_ws/build/CMakeFiles --progress-num=21,22 "Built target gtest_main"
 .PHONY : gtest/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -419,7 +421,7 @@ gtest/googletest/CMakeFiles/gtest_main.dir/clean:
 gtest/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/szf/DIP/dip_ws/build/CMakeFiles --progress-num=17,18 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/szf/DIP/dip_ws/build/CMakeFiles --progress-num=19,20 "Built target gtest"
 .PHONY : gtest/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -438,6 +440,33 @@ gtest: gtest/googletest/CMakeFiles/gtest.dir/rule
 gtest/googletest/CMakeFiles/gtest.dir/clean:
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/clean
 .PHONY : gtest/googletest/CMakeFiles/gtest.dir/clean
+
+#=============================================================================
+# Target rules for target dip/CMakeFiles/experiment4.dir
+
+# All Build rule for target.
+dip/CMakeFiles/experiment4.dir/all: dip/CMakeFiles/dipLib.dir/all
+	$(MAKE) -f dip/CMakeFiles/experiment4.dir/build.make dip/CMakeFiles/experiment4.dir/depend
+	$(MAKE) -f dip/CMakeFiles/experiment4.dir/build.make dip/CMakeFiles/experiment4.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/szf/DIP/dip_ws/build/CMakeFiles --progress-num=13,14 "Built target experiment4"
+.PHONY : dip/CMakeFiles/experiment4.dir/all
+
+# Build rule for subdir invocation for target.
+dip/CMakeFiles/experiment4.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/szf/DIP/dip_ws/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/experiment4.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/szf/DIP/dip_ws/build/CMakeFiles 0
+.PHONY : dip/CMakeFiles/experiment4.dir/rule
+
+# Convenience name for target.
+experiment4: dip/CMakeFiles/experiment4.dir/rule
+
+.PHONY : experiment4
+
+# clean rule for target.
+dip/CMakeFiles/experiment4.dir/clean:
+	$(MAKE) -f dip/CMakeFiles/experiment4.dir/build.make dip/CMakeFiles/experiment4.dir/clean
+.PHONY : dip/CMakeFiles/experiment4.dir/clean
 
 #=============================================================================
 # Target rules for target dip/CMakeFiles/experiment2.dir

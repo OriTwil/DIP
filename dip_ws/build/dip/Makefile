@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+dip/CMakeFiles/experiment4.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/experiment4.dir/rule
+.PHONY : dip/CMakeFiles/experiment4.dir/rule
+
+# Convenience name for target.
+experiment4: dip/CMakeFiles/experiment4.dir/rule
+
+.PHONY : experiment4
+
+# fast build rule for target.
+experiment4/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/experiment4.dir/build.make dip/CMakeFiles/experiment4.dir/build
+.PHONY : experiment4/fast
+
+# Convenience name for target.
 dip/CMakeFiles/experiment2.dir/rule:
 	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/experiment2.dir/rule
 .PHONY : dip/CMakeFiles/experiment2.dir/rule
@@ -944,6 +959,33 @@ src/experiment3.cpp.s:
 	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/experiment3.dir/build.make dip/CMakeFiles/experiment3.dir/src/experiment3.cpp.s
 .PHONY : src/experiment3.cpp.s
 
+src/experiment4.o: src/experiment4.cpp.o
+
+.PHONY : src/experiment4.o
+
+# target to build an object file
+src/experiment4.cpp.o:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/experiment4.dir/build.make dip/CMakeFiles/experiment4.dir/src/experiment4.cpp.o
+.PHONY : src/experiment4.cpp.o
+
+src/experiment4.i: src/experiment4.cpp.i
+
+.PHONY : src/experiment4.i
+
+# target to preprocess a source file
+src/experiment4.cpp.i:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/experiment4.dir/build.make dip/CMakeFiles/experiment4.dir/src/experiment4.cpp.i
+.PHONY : src/experiment4.cpp.i
+
+src/experiment4.s: src/experiment4.cpp.s
+
+.PHONY : src/experiment4.s
+
+# target to generate assembly for a file
+src/experiment4.cpp.s:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/experiment4.dir/build.make dip/CMakeFiles/experiment4.dir/src/experiment4.cpp.s
+.PHONY : src/experiment4.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -954,6 +996,7 @@ help:
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... edit_cache"
+	@echo "... experiment4"
 	@echo "... experiment2"
 	@echo "... drawImageHistogram"
 	@echo "... dip"
@@ -1016,6 +1059,9 @@ help:
 	@echo "... src/experiment3.o"
 	@echo "... src/experiment3.i"
 	@echo "... src/experiment3.s"
+	@echo "... src/experiment4.o"
+	@echo "... src/experiment4.i"
+	@echo "... src/experiment4.s"
 .PHONY : help
 
 

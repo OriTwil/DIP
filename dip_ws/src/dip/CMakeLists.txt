@@ -197,6 +197,12 @@ target_link_libraries(experiment3
     dipLib
 )
 
+add_executable(experiment4 src/experiment4.cpp)
+target_link_libraries(experiment4
+    ${ThirdParty}
+    dipLib
+)
+
 #add_executable(expr1 src/expr1.cpp include/dipLib/expr1.hpp)
 #target_link_libraries(expr1 ${catkin_LIBRARIES} ${OpenCV_LIBS})
 #add_dependencies(expr1 ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})

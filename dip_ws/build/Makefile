@@ -285,6 +285,19 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
+# Target rules for targets named experiment4
+
+# Build rule for target.
+experiment4: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 experiment4
+.PHONY : experiment4
+
+# fast build rule for target.
+experiment4/fast:
+	$(MAKE) -f dip/CMakeFiles/experiment4.dir/build.make dip/CMakeFiles/experiment4.dir/build
+.PHONY : experiment4/fast
+
+#=============================================================================
 # Target rules for targets named experiment2
 
 # Build rule for target.
@@ -839,6 +852,7 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... experiment4"
 	@echo "... experiment2"
 	@echo "... drawImageHistogram"
 	@echo "... dip"
