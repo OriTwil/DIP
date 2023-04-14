@@ -27,19 +27,45 @@ void EdgeDetector(cv::Mat& input,cv::Mat& output)
 }
 
 // 霍夫线变换
-Mat Hough_line(cv::Mat& output)
+void Hough_line(cv::Mat& output, cv::Mat& line_img)
 {
-    Mat lines;
+    std::vector<cv::Vec2f> lines;
     HoughLines(output, lines, 1, CV_PI/180, 100, 0, 0);
-    return lines;
+
+    cv::Point pt1, pt2;
+    float theta_sum = 0;
+    int theta_count = 0;
+    for (size_t i = 0; i < lines.size(); i++)
+    {
+        float rho = lines[i][0], theta = lines[i][1];
+        theta_sum += theta;
+        theta_count += 1;
+    }
+    if (theta_count > 0)
+    {
+        float theta_mean = theta_sum / theta_count;
+        float rho_mean = output.rows * sin(theta_mean) + output.cols * cos(theta_mean);
+        double a = cos(theta_mean), b = sin(theta_mean);
+        double x0 = a*rho_mean, y0 = b*rho_mean;
+        pt1.x = cvRound(x0 + 1000*(-b));
+        pt1.y = cvRound(y0 + 1000*(a));
+        pt2.x = cvRound(x0 - 1000*(-b));
+        pt2.y = cvRound(y0 - 1000*(a));
+        line( line_img, pt1, pt2, Scalar(0,0,255), 3, LINE_AA);
+    }
 }
 
 // 霍夫圆变换
-Mat Hough_Circle(cv::Mat& output)
+void Hough_Circle(cv::Mat& output, cv::Mat& circle_img)
 {
-    Mat circles;
+    std::vector<cv::Vec3f> circles;
     HoughCircles(output, circles, HOUGH_GRADIENT, 1, output.rows/8, 200, 100, 0, 0);
-    return circles;
+    for( size_t i = 0; i < circles.size(); i++ )
+    {
+        cv::Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
+        int radius = cvRound(circles[i][2]);
+        circle( circle_img, center, radius, Scalar(0,0,255), 3, LINE_AA);
+    }
 }
 
 int main(int argc,char **argv)
@@ -73,8 +99,8 @@ int main(int argc,char **argv)
 			break;
 		}
 
-        Mat frIn = frame.clone();// 笔记本
-        // Mat frIn = frame(cv::Rect(0,0,frame.cols/2,frame.rows)); // ZED左目图片
+        // Mat frIn = frame.clone();// 笔记本
+        Mat frIn = frame(cv::Rect(0,0,frame.cols/2,frame.rows)); // ZED左目图片
         imshow("In",frIn);
 
         // 灰度图转换
@@ -83,36 +109,48 @@ int main(int argc,char **argv)
 
         // 边缘检测函数
         EdgeDetector(frIn, edge_img);
+        imshow("edge",edge_img);
 
         // 线检测
         cv::Mat line_img = frIn.clone();
-        std::vector<cv::Vec2f> lines;
-        HoughLines(edge_img, lines, 1, CV_PI/180, 100, 0, 0);
-        for( size_t i = 0; i < lines.size(); i++ )
-        {
-            float rho = lines[i][0], theta = lines[i][1];
-            cv::Point pt1, pt2;
-            double a = cos(theta), b = sin(theta);
-            double x0 = a*rho, y0 = b*rho;
-            pt1.x = cvRound(x0 + 1000*(-b));
-            pt1.y = cvRound(y0 + 1000*(a));
-            pt2.x = cvRound(x0 - 1000*(-b));
-            pt2.y = cvRound(y0 - 1000*(a));
-            line( line_img, pt1, pt2, Scalar(0,0,255), 3, LINE_AA);
-        }
-        imshow("Line detection", line_img);
+        Hough_line(edge_img, line_img);
+        imshow("line",line_img);
 
         // 圆检测
         cv::Mat circle_img = frIn.clone();
-        std::vector<cv::Vec3f> circles;
-        HoughCircles(edge_img, circles, HOUGH_GRADIENT, 1, edge_img.rows/8, 200, 100, 0, 0);
-        for( size_t i = 0; i < circles.size(); i++ )
-        {
-            cv::Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
-            int radius = cvRound(circles[i][2]);
-            circle( circle_img, center, radius, Scalar(0,0,255), 3, LINE_AA);
-        }
-        imshow("Circle detection", circle_img);
+        Hough_Circle(edge_img, circle_img);
+        imshow("circle",circle_img);
+        // // 线检测
+        // cv::Mat line_img = edge_img.clone();
+        // std::vector<cv::Vec2f> lines;
+        // HoughLines(edge_img, lines, 5, CV_PI/180, 150, 0, 0);
+
+        // for( size_t i = 0; i < lines.size(); i++ )
+        // {
+        //     float rho = lines[i][0], theta = lines[i][1];
+        //     cv::Point pt1, pt2;
+        //     double a = cos(theta), b = sin(theta);
+        //     double x0 = a*rho, y0 = b*rho;
+        //     pt1.x = cvRound(x0 + 1000*(-b));
+        //     pt1.y = cvRound(y0 + 1000*(a));
+        //     pt2.x = cvRound(x0 - 1000*(-b));
+        //     pt2.y = cvRound(y0 - 1000*(a));
+        //     line( line_img, pt1, pt2, Scalar(0,0,255), 3, LINE_AA);
+        // }
+        // imshow("Line detection", line_img);
+
+        // // 圆检测
+        // cv::Mat circle_img = edge_img.clone();
+        // std::vector<cv::Vec3f> circles;
+        // HoughCircles(edge_img, circles, HOUGH_GRADIENT, 1, edge_img.rows/8, 200, 100, 0, 0);
+        // // imshow("circles",circles);
+        // for( size_t i = 0; i < circles.size(); i++ )
+        // {
+        //     cv::Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
+        //     int radius = cvRound(circles[i][2]);
+        //     circle( circle_img, center, radius, Scalar(0,0,255), 3, LINE_AA);
+        // }
+        // imshow("Circle detection", circle_img);
 
         ros::spinOnce();
         waitKey(5);

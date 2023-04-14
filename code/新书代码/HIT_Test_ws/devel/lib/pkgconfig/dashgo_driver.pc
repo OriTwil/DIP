@@ -1,0 +1,8 @@
+prefix=/home/zdh/HIT_Test_ws/devel
+
+Name: dashgo_driver
+Description: Description of dashgo_driver
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/zdh/HIT_Test_ws/devel/lib 
+Requires: 

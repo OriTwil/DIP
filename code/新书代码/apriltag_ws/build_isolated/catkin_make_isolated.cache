@@ -1,0 +1,2 @@
+apriltag
+-G Unix Makefiles -DCATKIN_DEVEL_PREFIX=/home/zdh/apriltag_ws/devel_isolated -DCMAKE_INSTALL_PREFIX=/home/zdh/apriltag_ws/install_isolated

@@ -1,0 +1,8 @@
+prefix=/home/zdh/HIT_Test_ws/install
+
+Name: ltme01_driver
+Description: Description of ltme01_driver
+Version: 1.0.1
+Cflags: 
+Libs: -L/home/zdh/HIT_Test_ws/install/lib 
+Requires: 

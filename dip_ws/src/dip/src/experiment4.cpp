@@ -3,8 +3,6 @@
 #include <string>
 #include <algorithm>
 #include <vector>
-// #include <cv.h>
-// #include <highgui.h>
 #include <opencv2/opencv.hpp>
 #include <opencv2/core/core.hpp>
 #include "ros/ros.h"
@@ -65,11 +63,11 @@ int main(int argc,char **argv)
 
     // 创建阈值分割的滑动条
     int iLowH = 0;
-    int iHighH = 8;
-    int iLowS = 53;
-    int iHighS = 110;
-    int iLowV = 64;
-    int iHighV = 203;
+    int iHighH = 10;
+    int iLowS = 43;
+    int iHighS = 255;
+    int iLowV = 46;
+    int iHighV = 255;
 
     namedWindow("Control", WINDOW_AUTOSIZE); // 新建一个窗口
 
@@ -91,8 +89,8 @@ int main(int argc,char **argv)
 			break;
 		}
 
-        Mat frIn = frame.clone();// 笔记本
-        // Mat frIn = frame(cv::Rect(0,0,frame.cols/2,frame.rows)); // ZED左目图片
+        // Mat frIn = frame.clone();// 笔记本
+        Mat frIn = frame(cv::Rect(0,0,frame.cols/2,frame.rows)); // ZED左目图片
         imshow("In",frIn);
 
         // 色度空间转换
@@ -122,20 +120,30 @@ int main(int argc,char **argv)
         findContours(frThresholded, contours, hierarchy, RETR_TREE, CHAIN_APPROX_SIMPLE, Point(0, 0)); // 轮廓检测
 
         // 2. 选择矩形描述轮廓
-        std::vector<Rect> boundRect(contours.size()); // 定义矩形向量
+        std::vector<Rect> boundRect; // 定义矩形向量
         for (int i = 0; i < contours.size(); i++)
         {
-        boundRect[i] = boundingRect(contours[i]); // 根据轮廓获取外接矩形
-        rectangle(frame, boundRect[i].tl(), boundRect[i].br(), Scalar(0, 255, 0), 2, 8, 0); // 画矩形框
+            Rect rect = boundingRect(contours[i]); // 根据轮廓获取外接矩形
+            float aspectRatio = (float)rect.width / (float)rect.height; // 计算宽高比
+            int area = rect.width * rect.height; // 计算面积
+            if (aspectRatio >= 0 && aspectRatio <= 0.5 && area > 8000) { // 仅选择宽高比在1到2之间且面积大于200像素的矩形
+                boundRect.push_back(rect);
+                rectangle(frame, rect.tl(), rect.br(), Scalar(0, 255, 0), 2, 8, 0); // 画矩形框
+            }
         }
         imshow("Result", frame);
 
         // 3. 获取多边形区域后。从原图中截取该区域图像
         // 获取多边形区域
-        std::vector<std::vector<Point>> polygons(contours.size());
-        for (int i = 0; i < contours.size(); i++)
+        std::vector<std::vector<Point>> polygons(boundRect.size());
+        for (int i = 0; i < boundRect.size(); i++)
         {
-            approxPolyDP(Mat(contours[i]), polygons[i], 3, true); // 多边形拟合
+            std::vector<Point> poly;
+            poly.push_back(boundRect[i].tl());
+            poly.push_back(Point(boundRect[i].tl().x, boundRect[i].br().y));
+            poly.push_back(boundRect[i].br());
+            poly.push_back(Point(boundRect[i].br().x, boundRect[i].tl().y));
+            approxPolyDP(Mat(poly), polygons[i], 3, true); // 多边形拟合
         }
 
         // 从原图中截取该区域图像
@@ -146,6 +154,7 @@ int main(int argc,char **argv)
         }
         Mat frTarget; // 存储目标图像
         frIn.copyTo(frTarget, frROI); // 从原图中截取该区域图像
+
 
         // 4. 对多边形区域的图像进行颜色分割，对分割结果进行统计，判断图像的颜色并输出分类结果
         //（1）给红，橙，黄，绿，青，蓝，紫设定对应阈值，统计轮廓内对应每种颜色阈值范围内的像素个数。
@@ -183,30 +192,78 @@ int main(int argc,char **argv)
         } else {
             std::cout << "No color detected" << std::endl;
         }
-        //（2）绘制直方图
-        Mat hsvFrame;
-        cvtColor(frFiltered, hsvFrame, COLOR_BGR2HSV); // 转换为HSV空间
+        // // 绘制折线图
+        // Mat hsvFrame;
+        // cvtColor(frFiltered, hsvFrame, COLOR_BGR2HSV); // 转换为HSV空间
+
+        // Mat hist;
+        // int histSize[] = { 180 }; // 色调值的范围是0到179
+        // float hranges[] = { 0, 180 };
+        // const float* ranges[] = { hranges };
+        // int channels[] = { 0 }; // 色调通道
+        // calcHist(&hsvFrame, 1, channels, Mat(), hist, 1, histSize, ranges, true, false); // 计算直方图
+
+        // // 显示折线图
+        // int hist_w = 360, hist_h = 240;
+        // int bin_w = cvRound((double)hist_w / histSize[0]);
+        // Mat histImg(hist_h, hist_w, CV_8UC3, Scalar(0, 0, 0));
+        // normalize(hist, hist, 0, histImg.rows, NORM_MINMAX, -1, Mat()); // 归一化
+
+        // for (int i = 1; i < histSize[0]; i++)
+        // {
+        //     line(histImg, Point(bin_w*(i - 1), hist_h - cvRound(hist.at<float>(i - 1))),
+        //         Point(bin_w*(i), hist_h - cvRound(hist.at<float>(i))),
+        //         Scalar(255, 255, 255), 2, 8, 0);
+        // }
+        // imshow("Hist", histImg);
+
+        // 统计不同颜色在直方图中的比例，红橙黄绿青蓝紫
+        float ranges[] = {0, 10, 20, 30, 60, 100, 135, 180};
+        const float* histRange = {ranges};
 
         Mat hist;
-        int histSize[] = { 180 }; // 色调值的范围是0到179
-        float hranges[] = { 0, 180 };
-        const float* ranges[] = { hranges };
-        int channels[] = { 0 }; // 色调通道
-        calcHist(&hsvFrame, 1, channels, Mat(), hist, 1, histSize, ranges, true, false); // 计算直方图
+        int histSize = 7;
+        int channels[] = {0}; // 只对Hue通道进行直方图统计
+        calcHist(&frHsv, 1, channels, Mat(), hist, 1, &histSize, &histRange, true, false);
 
-        // 显示直方图
-        int hist_w = 360, hist_h = 240;
-        int bin_w = cvRound((double)hist_w / histSize[0]);
-        Mat histImg(hist_h, hist_w, CV_8UC3, Scalar(0, 0, 0));
-        normalize(hist, hist, 0, histImg.rows, NORM_MINMAX, -1, Mat()); // 归一化
+        double maxVal = 0;
+        minMaxLoc(hist, 0, &maxVal, 0, 0);
 
-        for (int i = 1; i < histSize[0]; i++)
+        int histHeight = 256;
+        Mat histImg = Mat::zeros(histHeight, histSize * 30, CV_8UC3);
+
+        for (int h = 0; h < histSize; h++)
         {
-            line(histImg, Point(bin_w*(i - 1), hist_h - cvRound(hist.at<float>(i - 1))),
-                Point(bin_w*(i), hist_h - cvRound(hist.at<float>(i))),
-                Scalar(255, 255, 255), 2, 8, 0);
+            float binVal = hist.at<float>(h);
+            int intensity = cvRound(binVal * histHeight / maxVal);
+            Scalar color;
+            if (h == 0 || h == 1 || h == 6)
+            {
+                color = Scalar(255, 0, 0); // 红色
+            }
+            else if (h == 2 || h == 3)
+            {
+                color = Scalar(0, 128, 255); // 橙色
+            }
+            else if (h == 4)
+            {
+                color = Scalar(0, 255, 255); // 黄色
+            }
+            else if (h == 5)
+            {
+                color = Scalar(0, 255, 0); // 绿色
+            }
+            else if (h == 6)
+            {
+                color = Scalar(255, 255, 0); // 青色
+            }
+            else
+            {
+                color = Scalar(255, 0, 255); // 紫色
+            }
+            rectangle(histImg, Point(h * 30, histHeight - 1), Point((h + 1) * 30 - 1, histHeight - intensity), color, FILLED);
         }
-        imshow("Hist", histImg);
+        imshow("Histogram", histImg);
 
         ros::spinOnce();
         waitKey(5);
