@@ -27,36 +27,35 @@
 
 ## 实验效果图
 - 实验一：直方图均衡化
-
-![直方图均衡化](https://github.com/OriTwil/DIP/blob/main/graph/exp1(3).png)
+- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp1(3).png" width="400" height="300">
 
 - 实验二：输入、空域高斯滤波、灰度图、二值图、膨胀、腐蚀
 
 - 输入图像
-- ![输入图像](https://github.com/OriTwil/DIP/blob/main/graph/exp2(in).png)
+- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp2(in).png" width="400" height="300">
 - 空域高斯滤波
-- ![空域高斯滤波](https://github.com/OriTwil/DIP/blob/main/graph/exp2(filtered).png)
+- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp2(filtered).png" width="400" height="300">
 - 灰度图
-- ![灰度图](https://github.com/OriTwil/DIP/blob/main/graph/exp2(gray).png)
+- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp2(gray).png" width="400" height="300">
 - 二值图
-- ![二值图](https://github.com/OriTwil/DIP/blob/main/graph/exp2(binary).png)
+- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp2(binary).png" width="400" height="300">
 - 腐蚀
-- ![腐蚀](https://github.com/OriTwil/DIP/blob/main/graph/exp2(eroded).png)
+- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp2(eroded).png" width="400" height="300">
 - 膨胀
-- ![膨胀](https://github.com/OriTwil/DIP/blob/main/graph/exp2(dilated).png)
+- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp2(dilated).png" width="400" height="300">
 
 - 实验三：边缘检测、线检测
 - 边缘检测
-- ![边缘检测](https://github.com/OriTwil/DIP/blob/main/graph/exp3(edge).png)
+- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp3(edge).png" width="400" height="300">
 
 - 实验四：输入、色度空间转换、颜色分割、目标检测、目标颜色检测、直方图
 - 输入
-- ![输入](https://github.com/OriTwil/DIP/blob/main/graph/exp4(10).png)
+- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp4(10).png" width="400" height="300">
 - 色度空间转换
-- ![色度空间转换](https://github.com/OriTwil/DIP/blob/main/graph/exp4(8)png.png)
+- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp4(8)png.png" width="400" height="300">
 - 颜色分割
-- ![颜色分割](https://github.com/OriTwil/DIP/blob/main/graph/exp4(9).png)
+- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp4(9).png" width="400" height="300">
 - 目标检测
-- ![目标检测、目标颜色检测](https://github.com/OriTwil/DIP/blob/main/graph/expr4(7).png)
+- <img src="https://github.com/OriTwil/DIP/blob/main/graph/expr4(7).png" width="400" height="300">
 - 直方图
-- ![直方图](https://github.com/OriTwil/DIP/blob/main/graph/exp4(hist).png)
+- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp4(hist).png" width="400" height="300">
