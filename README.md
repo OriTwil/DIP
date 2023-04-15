@@ -29,33 +29,33 @@ Course Project: Implementing an Automated Medicine Delivery Car
 
 ## Experimental Results
 - Experiment 1: Histogram Equalization
-- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp1(3).png" width="400" height="300">
+- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp1(3).png" width="200" height="150">
 - Experiment 2: Input, Spatial Gaussian Filtering, Grayscale Image, Binary 
 - Input Image
-- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp2(in).png" width="400" height="300">
+- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp2(in).png" width="200" height="150">
 - Spatial Gaussian Filtering
-- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp2(filtered).png" width="400" height="300">
+- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp2(filtered).png" width="200" height="150">
 - Grayscale Image
-- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp2(gray).png" width="400" height="300">
+- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp2(gray).png" width="200" height="150">
 - Binary Image
-- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp2(binary).png" width="400" height="300">
+- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp2(binary).png" width="200" height="150">
 - Erosion
-- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp2(eroded).png" width="400" height="300">
+- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp2(eroded).png" width="200" height="150">
 - Dilation
-- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp2(dilated).png" width="400" height="300">
+- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp2(dilated).png" width="200" height="150">
 
 - Experiment 3: Edge Detection, Line Detection
 - 边缘检测
-- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp3(edge).png" width="400" height="300">
+- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp3(edge).png" width="200" height="150">
 
 - Experiment 4: Input, Color Space Conversion, Color Segmentation, Object Detection, Object Color Detection, and Histogram
 - Input
-- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp4(10).png" width="400" height="300">
+- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp4(10).png" width="200" height="150">
 - Color Space Conversion
-- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp4(8)png.png" width="400" height="300">
+- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp4(8)png.png" width="200" height="150">
 - Color Segmentation
-- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp4(9).png" width="400" height="300">
+- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp4(9).png" width="200" height="150">
 - Object Detection
-- <img src="https://github.com/OriTwil/DIP/blob/main/graph/expr4(7).png" width="400" height="300">
+- <img src="https://github.com/OriTwil/DIP/blob/main/graph/expr4(7).png" width="200" height="150">
 - Hist
-- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp4(hist).png" width="400" height="300">
+- <img src="https://github.com/OriTwil/DIP/blob/main/graph/exp4(hist).png" width="200" height="150">
