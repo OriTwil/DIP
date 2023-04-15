@@ -1,6 +1,5 @@
 # DIP
-Digital Image Processing Lab
-[中文说明](https://github.com/OriTwil/DIP/blob/main/%E4%B8%AD%E6%96%87%E8%AF%B4%E6%98%8E.md)
+This is the repository for the Digital Image Processing Lab. For introduction in Chinese , please refer to the [中文说明](https://github.com/OriTwil/DIP/blob/main/%E4%B8%AD%E6%96%87%E8%AF%B4%E6%98%8E.md)
 ## Update Notes
 
 - 4/12: Completed Experiment 1, updated code and results.
@@ -17,10 +16,10 @@ Digital Image Processing Lab
 - Experiment 4: Color Space Conversion, Color Segmentation, Object Color Detection, and Chassis Control
 Course Project: Implementing an Automated Medicine Delivery Car
 ## File Description
-- code： Reference code
-- dip_ws： Experiment workspace
-- graph：Experiment results
-- tutorials：Experiment guide
+- `code`： Reference code
+- `dip_ws`： Experiment workspace
+- `graph`：Experiment results
+- `tutorials`：Experiment guide
 
 ## Instructions
 
