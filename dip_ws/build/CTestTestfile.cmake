@@ -5,4 +5,9 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
+subdirs("dashgo_description")
+subdirs("dashgo_nav")
+subdirs("dashgo_rviz")
 subdirs("dip")
+subdirs("dashgo_driver")
+subdirs("dashgo_tools")

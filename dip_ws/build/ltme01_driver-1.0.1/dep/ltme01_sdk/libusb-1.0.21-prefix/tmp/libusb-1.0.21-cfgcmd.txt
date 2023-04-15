@@ -1,0 +1,1 @@
+cmd='/home/szf/DIP/dip_ws/src/ltme01_driver-1.0.1/dep/ltme01_sdk/ThirdParty/libusb/linux/libusb-1.0.21/configure;CFLAGS=-fPIC;--prefix=/home/szf/DIP/dip_ws/build/ltme01_driver-1.0.1/dep/ltme01_sdk/ThirdParty/libusb-1.0.21;--enable-shared=no;--enable-static=yes'

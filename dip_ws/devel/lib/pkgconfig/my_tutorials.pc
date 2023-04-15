@@ -1,0 +1,8 @@
+prefix=/home/szf/DIP/dip_ws/devel
+
+Name: my_tutorials
+Description: Description of my_tutorials
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: geometry_msgs roscpp rospy std_msgs
