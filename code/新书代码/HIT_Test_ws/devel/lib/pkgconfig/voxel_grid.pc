@@ -1,0 +1,8 @@
+prefix=/home/zdh/HIT_Test_ws/devel
+
+Name: voxel_grid
+Description: Description of voxel_grid
+Version: 1.14.4
+Cflags: -I/home/zdh/HIT_Test_ws/src/navigation-kinetic-devel/voxel_grid/include
+Libs: -L/home/zdh/HIT_Test_ws/devel/lib -lvoxel_grid
+Requires: roscpp

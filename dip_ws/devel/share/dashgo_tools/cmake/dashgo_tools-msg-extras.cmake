@@ -1,0 +1,2 @@
+set(dashgo_tools_MESSAGE_FILES "/home/szf/DIP/dip_ws/devel/share/dashgo_tools/msg/check_msgAction.msg;/home/szf/DIP/dip_ws/devel/share/dashgo_tools/msg/check_msgActionGoal.msg;/home/szf/DIP/dip_ws/devel/share/dashgo_tools/msg/check_msgActionResult.msg;/home/szf/DIP/dip_ws/devel/share/dashgo_tools/msg/check_msgActionFeedback.msg;/home/szf/DIP/dip_ws/devel/share/dashgo_tools/msg/check_msgGoal.msg;/home/szf/DIP/dip_ws/devel/share/dashgo_tools/msg/check_msgResult.msg;/home/szf/DIP/dip_ws/devel/share/dashgo_tools/msg/check_msgFeedback.msg")
+set(dashgo_tools_SERVICE_FILES "")

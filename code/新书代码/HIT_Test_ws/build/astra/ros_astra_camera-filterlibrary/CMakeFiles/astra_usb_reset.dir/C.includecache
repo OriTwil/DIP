@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zdh/HIT_Test_ws/src/astra/ros_astra_camera-filterlibrary/src/usb_reset.c
+stdio.h
+-
+unistd.h
+-
+fcntl.h
+-
+errno.h
+-
+sys/ioctl.h
+-
+linux/usbdevice_fs.h
+-
+

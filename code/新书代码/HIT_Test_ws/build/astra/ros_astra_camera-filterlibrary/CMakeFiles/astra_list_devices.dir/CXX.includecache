@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zdh/HIT_Test_ws/src/astra/ros_astra_camera-filterlibrary/include/astra_camera/astra_device_info.h
+ostream
+-
+boost/cstdint.hpp
+-
+
+/home/zdh/HIT_Test_ws/src/astra/ros_astra_camera-filterlibrary/include/astra_camera/astra_device_manager.h
+astra_camera/astra_device_info.h
+/home/zdh/HIT_Test_ws/src/astra/ros_astra_camera-filterlibrary/include/astra_camera/astra_camera/astra_device_info.h
+boost/thread/mutex.hpp
+-
+vector
+-
+string
+-
+ostream
+-
+
+/home/zdh/HIT_Test_ws/src/astra/ros_astra_camera-filterlibrary/include/astra_camera/astra_exception.h
+cstdarg
+-
+cstdio
+-
+exception
+-
+string
+-
+
+/home/zdh/HIT_Test_ws/src/astra/ros_astra_camera-filterlibrary/src/list_devices.cpp
+iostream
+-
+astra_camera/astra_device_manager.h
+/home/zdh/HIT_Test_ws/src/astra/ros_astra_camera-filterlibrary/src/astra_camera/astra_device_manager.h
+astra_camera/astra_exception.h
+/home/zdh/HIT_Test_ws/src/astra/ros_astra_camera-filterlibrary/src/astra_camera/astra_exception.h
+

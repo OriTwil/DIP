@@ -1,0 +1,38 @@
+# CMake generated Testfile for 
+# Source directory: /home/zdh/HIT_Test_ws/src
+# Build directory: /home/zdh/HIT_Test_ws/build
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+subdirs(gtest)
+subdirs(astra/ros_astra_launch-master)
+subdirs(navigation-kinetic-devel/navigation)
+subdirs(mapping/slam_gmapping-hydro-devel/slam_gmapping)
+subdirs(dashgo_description)
+subdirs(dashgo_nav)
+subdirs(dashgo_rviz)
+subdirs(my_tutorials)
+subdirs(navigation-kinetic-devel/map_server)
+subdirs(astra/ros_astra_camera-filterlibrary)
+subdirs(ltme01_driver-1.0.1)
+subdirs(navigation-kinetic-devel/amcl)
+subdirs(apriltag_ros-master/apriltag_ros)
+subdirs(dashgo_driver)
+subdirs(dashgo_tools)
+subdirs(mapping/slam_gmapping-hydro-devel/gmapping)
+subdirs(navigation-kinetic-devel/robot_pose_ekf)
+subdirs(navigation-kinetic-devel/fake_localization)
+subdirs(navigation-kinetic-devel/voxel_grid)
+subdirs(navigation-kinetic-devel/costmap_2d)
+subdirs(navigation-kinetic-devel/nav_core)
+subdirs(navigation-kinetic-devel/base_local_planner)
+subdirs(navigation-kinetic-devel/carrot_planner)
+subdirs(navigation-kinetic-devel/clear_costmap_recovery)
+subdirs(navigation-kinetic-devel/dwa_local_planner)
+subdirs(navigation-kinetic-devel/move_slow_and_clear)
+subdirs(navigation-kinetic-devel/navfn)
+subdirs(navigation-kinetic-devel/global_planner)
+subdirs(navigation-kinetic-devel/rotate_recovery)
+subdirs(navigation-kinetic-devel/move_base)
+subdirs(navigation-kinetic-devel/teb_local_planner)
+subdirs(probot_vision)

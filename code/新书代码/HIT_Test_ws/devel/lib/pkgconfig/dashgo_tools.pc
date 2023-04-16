@@ -1,0 +1,8 @@
+prefix=/home/zdh/HIT_Test_ws/devel
+
+Name: dashgo_tools
+Description: Description of dashgo_tools
+Version: 0.0.0
+Cflags: -I/home/zdh/HIT_Test_ws/devel/include
+Libs: -L/home/zdh/HIT_Test_ws/devel/lib 
+Requires: actionlib_msgs

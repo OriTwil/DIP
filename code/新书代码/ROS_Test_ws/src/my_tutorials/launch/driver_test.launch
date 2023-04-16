@@ -1,0 +1,4 @@
+<launch>
+  <param name="/use_sim_time" value="false" />
+  <node name="dashgo_driver" pkg="dashgo_driver" type="driver_test" output="screen" respawn="true" />
+</launch>

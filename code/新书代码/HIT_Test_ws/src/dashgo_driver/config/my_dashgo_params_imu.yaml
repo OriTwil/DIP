@@ -1,0 +1,11 @@
+port: /dev/port1
+baud: 115200
+
+useImu: true
+base_frame: base_footprint
+
+# === Robot drivetrain parameters
+wheel_diameter: 0.162  
+wheel_track: 0.33
+encoder_resolution: 610   
+gear_reduction: 1.0

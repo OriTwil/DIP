@@ -7,7 +7,7 @@
 #include <opencv2/opencv.hpp>
 #include <opencv2/core/core.hpp>
 #include "ros/ros.h"
-#define READIMAGE_ONLY
+// #define READIMAGE_ONLY
 #ifndef READIMAGE_ONLY
 #include <geometry_msgs/Twist.h>
 #endif
@@ -52,12 +52,12 @@ int main(int argc, char **argv)
 #ifndef READIMAGE_ONLY
 		//以下代码可设置机器人的速度值，从而控制机器人运动
 		geometry_msgs::Twist cmd_red;
-		cmd_red.linear.x = 0;
+		cmd_red.linear.x = 0.1;
 		cmd_red.linear.y = 0;
 		cmd_red.linear.z = 0;
 		cmd_red.angular.x = 0;
 		cmd_red.angular.y = 0;
-		cmd_red.angular.z = 0.2;
+		cmd_red.angular.z = 0;
 		pub.publish(cmd_red);
 #endif
 		ros::spinOnce();

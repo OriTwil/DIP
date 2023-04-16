@@ -1,0 +1,8 @@
+prefix=/home/zdh/HIT_Test_ws/install
+
+Name: dashgo_description
+Description: Description of dashgo_description
+Version: 2.1.0
+Cflags: 
+Libs: -L/home/zdh/HIT_Test_ws/install/lib 
+Requires: 
