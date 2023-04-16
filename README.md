@@ -1,5 +1,6 @@
 # DIP
 This is the repository for the Digital Image Processing Lab. For introduction in Chinese , please refer to the [中文说明](https://github.com/OriTwil/DIP/blob/main/%E4%B8%AD%E6%96%87%E8%AF%B4%E6%98%8E.md)
+ <img src="https://github.com/OriTwil/DIP/blob/main/graph/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230416170210.jpg" width="200" height="250">
 ## Update Notes
 
 - 4/12: Completed Experiment 1, updated code and results.
