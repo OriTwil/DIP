@@ -40,8 +40,10 @@ void Gaussian(cv::Mat& input, cv::Mat& output, cv::Mat sigma)
 
 int main(int argc,char **argv)
 {
+    geometry_msgs::Twist cmd_red;
+    bool flag = false;
     VideoCapture capture;
-    capture.open(0);// 0为笔记本摄像头 1为zed相机
+    capture.open(4);// 0为笔记本摄像头 1为zed相机
 
 	ROS_INFO("------START------");
 	ros::init(argc, argv, "trafficLaneTrack"); //初始化ROS节点
@@ -60,6 +62,8 @@ int main(int argc,char **argv)
     int nFrames = 0;// 图片帧数
     int frameWidth = capture.get(cv::CAP_PROP_FRAME_WIDTH);
     int frameHeight = capture.get(cv::CAP_PROP_FRAME_HEIGHT);
+    int area_min = frameWidth * frameHeight / 30;
+    int area_max = frameWidth * frameHeight / 25;
 
     // 创建阈值分割的滑动条
     int iLowH = 0;
@@ -121,17 +125,66 @@ int main(int argc,char **argv)
 
         // 2. 选择矩形描述轮廓
         std::vector<Rect> boundRect; // 定义矩形向量
+        int centerx,centery,area;
         for (int i = 0; i < contours.size(); i++)
         {
             Rect rect = boundingRect(contours[i]); // 根据轮廓获取外接矩形
             float aspectRatio = (float)rect.width / (float)rect.height; // 计算宽高比
-            int area = rect.width * rect.height; // 计算面积
-            if (aspectRatio >= 0 && aspectRatio <= 0.5 && area > 8000) { // 仅选择宽高比在1到2之间且面积大于200像素的矩形
+            area = rect.width * rect.height; // 计算面积
+            flag = true;
+
+            if (aspectRatio >= 0 && aspectRatio <= 0.5 && area > 10000) { // 仅选择宽高比在1到2之间且面积大于200像素的矩形
                 boundRect.push_back(rect);
+                
                 rectangle(frame, rect.tl(), rect.br(), Scalar(0, 255, 0), 2, 8, 0); // 画矩形框
+                Point center(rect.x + rect.width/2, rect.y + rect.height/2); // 计算矩形中心点坐标
+                circle(frame, center, 5, Scalar(0, 0, 255), -1); // 在中心点画一个红色圆圈
+                centerx = rect.x + rect.width / 2;
+                centery = rect.y + rect.height / 2; // 计算中心坐标
+
+                // if(area < 90000)
+                // {
+                //     cmd_red.linear.x = 0.2;
+                // }
+                // else if(area > 110000)
+                // {
+                //     cmd_red.linear.x = -0.2;
+                // }
+                // else
+                // {
+                //     cmd_red.linear.x = 0;
+                // }
+                ROS_INFO("area = %d",area);
             }
         }
         imshow("Result", frame);
+
+        // 目标跟随实现
+
+
+        if(centerx < (frameWidth/4)*(0.95) )
+        {
+            cmd_red.angular.z = 0.2;
+        }
+        else if(centerx > (frameWidth/4)*(1.05))
+        {
+            cmd_red.angular.z = -0.2;
+        }
+        else
+        {
+            cmd_red.angular.z = 0;
+        }
+        ROS_INFO("centerx = %d",centerx);
+        ROS_INFO("frameWidth/4 = %d",frameWidth/4);
+        ROS_INFO("flag = %d",flag);
+
+        cmd_red.linear.x = 0.2;
+        cmd_red.linear.y = 0;
+        cmd_red.linear.z = 0;
+        cmd_red.angular.x = 0;
+        cmd_red.angular.y = 0;
+
+        pub.publish(cmd_red);
 
         // 3. 获取多边形区域后。从原图中截取该区域图像
         // 获取多边形区域

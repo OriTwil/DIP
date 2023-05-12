@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/szf/DIP/dip_ws/build
 include dashgo_tools/CMakeFiles/_dashgo_tools_generate_messages_check_deps_check_msgActionFeedback.dir/progress.make
 
 dashgo_tools/CMakeFiles/_dashgo_tools_generate_messages_check_deps_check_msgActionFeedback:
-	cd /home/szf/DIP/dip_ws/build/dashgo_tools && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py dashgo_tools /home/szf/DIP/dip_ws/devel/share/dashgo_tools/msg/check_msgActionFeedback.msg dashgo_tools/check_msgFeedback:actionlib_msgs/GoalStatus:std_msgs/Header:actionlib_msgs/GoalID
+	cd /home/szf/DIP/dip_ws/build/dashgo_tools && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py dashgo_tools /home/szf/DIP/dip_ws/devel/share/dashgo_tools/msg/check_msgActionFeedback.msg actionlib_msgs/GoalID:dashgo_tools/check_msgFeedback:std_msgs/Header:actionlib_msgs/GoalStatus
 
 _dashgo_tools_generate_messages_check_deps_check_msgActionFeedback: dashgo_tools/CMakeFiles/_dashgo_tools_generate_messages_check_deps_check_msgActionFeedback
 _dashgo_tools_generate_messages_check_deps_check_msgActionFeedback: dashgo_tools/CMakeFiles/_dashgo_tools_generate_messages_check_deps_check_msgActionFeedback.dir/build.make

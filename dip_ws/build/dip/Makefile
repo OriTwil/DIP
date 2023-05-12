@@ -102,6 +102,17 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -123,17 +134,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,19 +168,94 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-dip/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule:
-	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-.PHONY : dip/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+dip/CMakeFiles/dip_node.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/dip_node.dir/rule
+.PHONY : dip/CMakeFiles/dip_node.dir/rule
 
 # Convenience name for target.
-actionlib_msgs_generate_messages_cpp: dip/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+dip_node: dip/CMakeFiles/dip_node.dir/rule
 
-.PHONY : actionlib_msgs_generate_messages_cpp
+.PHONY : dip_node
 
 # fast build rule for target.
-actionlib_msgs_generate_messages_cpp/fast:
-	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make dip/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
-.PHONY : actionlib_msgs_generate_messages_cpp/fast
+dip_node/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_node.dir/build.make dip/CMakeFiles/dip_node.dir/build
+.PHONY : dip_node/fast
+
+# Convenience name for target.
+dip/CMakeFiles/dip4_node.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/dip4_node.dir/rule
+.PHONY : dip/CMakeFiles/dip4_node.dir/rule
+
+# Convenience name for target.
+dip4_node: dip/CMakeFiles/dip4_node.dir/rule
+
+.PHONY : dip4_node
+
+# fast build rule for target.
+dip4_node/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip4_node.dir/build.make dip/CMakeFiles/dip4_node.dir/build
+.PHONY : dip4_node/fast
+
+# Convenience name for target.
+dip/CMakeFiles/dip3_node.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/dip3_node.dir/rule
+.PHONY : dip/CMakeFiles/dip3_node.dir/rule
+
+# Convenience name for target.
+dip3_node: dip/CMakeFiles/dip3_node.dir/rule
+
+.PHONY : dip3_node
+
+# fast build rule for target.
+dip3_node/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip3_node.dir/build.make dip/CMakeFiles/dip3_node.dir/build
+.PHONY : dip3_node/fast
+
+# Convenience name for target.
+dip/CMakeFiles/dip1_node.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/dip1_node.dir/rule
+.PHONY : dip/CMakeFiles/dip1_node.dir/rule
+
+# Convenience name for target.
+dip1_node: dip/CMakeFiles/dip1_node.dir/rule
+
+.PHONY : dip1_node
+
+# fast build rule for target.
+dip1_node/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip1_node.dir/build.make dip/CMakeFiles/dip1_node.dir/build
+.PHONY : dip1_node/fast
+
+# Convenience name for target.
+dip/CMakeFiles/experiment4.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/experiment4.dir/rule
+.PHONY : dip/CMakeFiles/experiment4.dir/rule
+
+# Convenience name for target.
+experiment4: dip/CMakeFiles/experiment4.dir/rule
+
+.PHONY : experiment4
+
+# fast build rule for target.
+experiment4/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/experiment4.dir/build.make dip/CMakeFiles/experiment4.dir/build
+.PHONY : experiment4/fast
+
+# Convenience name for target.
+dip/CMakeFiles/experiment2.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/experiment2.dir/rule
+.PHONY : dip/CMakeFiles/experiment2.dir/rule
+
+# Convenience name for target.
+experiment2: dip/CMakeFiles/experiment2.dir/rule
+
+.PHONY : experiment2
+
+# fast build rule for target.
+experiment2/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/experiment2.dir/build.make dip/CMakeFiles/experiment2.dir/build
+.PHONY : experiment2/fast
 
 # Convenience name for target.
 dip/CMakeFiles/drawImageHistogram.dir/rule:
@@ -198,19 +273,79 @@ drawImageHistogram/fast:
 .PHONY : drawImageHistogram/fast
 
 # Convenience name for target.
-dip/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
-	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-.PHONY : dip/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+dip/CMakeFiles/dip.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/dip.dir/rule
+.PHONY : dip/CMakeFiles/dip.dir/rule
 
 # Convenience name for target.
-actionlib_msgs_generate_messages_lisp: dip/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+dip: dip/CMakeFiles/dip.dir/rule
 
-.PHONY : actionlib_msgs_generate_messages_lisp
+.PHONY : dip
 
 # fast build rule for target.
-actionlib_msgs_generate_messages_lisp/fast:
-	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make dip/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
-.PHONY : actionlib_msgs_generate_messages_lisp/fast
+dip/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip.dir/build.make dip/CMakeFiles/dip.dir/build
+.PHONY : dip/fast
+
+# Convenience name for target.
+dip/CMakeFiles/dip_genpy.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/dip_genpy.dir/rule
+.PHONY : dip/CMakeFiles/dip_genpy.dir/rule
+
+# Convenience name for target.
+dip_genpy: dip/CMakeFiles/dip_genpy.dir/rule
+
+.PHONY : dip_genpy
+
+# fast build rule for target.
+dip_genpy/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_genpy.dir/build.make dip/CMakeFiles/dip_genpy.dir/build
+.PHONY : dip_genpy/fast
+
+# Convenience name for target.
+dip/CMakeFiles/dip_generate_messages_py.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/dip_generate_messages_py.dir/rule
+.PHONY : dip/CMakeFiles/dip_generate_messages_py.dir/rule
+
+# Convenience name for target.
+dip_generate_messages_py: dip/CMakeFiles/dip_generate_messages_py.dir/rule
+
+.PHONY : dip_generate_messages_py
+
+# fast build rule for target.
+dip_generate_messages_py/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_generate_messages_py.dir/build.make dip/CMakeFiles/dip_generate_messages_py.dir/build
+.PHONY : dip_generate_messages_py/fast
+
+# Convenience name for target.
+dip/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+.PHONY : dip/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_cpp: dip/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_cpp
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_cpp/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make dip/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
+.PHONY : actionlib_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+dip/CMakeFiles/dip_generate_messages_cpp.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/dip_generate_messages_cpp.dir/rule
+.PHONY : dip/CMakeFiles/dip_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+dip_generate_messages_cpp: dip/CMakeFiles/dip_generate_messages_cpp.dir/rule
+
+.PHONY : dip_generate_messages_cpp
+
+# fast build rule for target.
+dip_generate_messages_cpp/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_generate_messages_cpp.dir/build.make dip/CMakeFiles/dip_generate_messages_cpp.dir/build
+.PHONY : dip_generate_messages_cpp/fast
 
 # Convenience name for target.
 dip/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule:
@@ -273,6 +408,36 @@ actionlib_msgs_generate_messages_eus/fast:
 .PHONY : actionlib_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
+dip/CMakeFiles/_dip_generate_messages_check_deps_pid_driver.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/_dip_generate_messages_check_deps_pid_driver.dir/rule
+.PHONY : dip/CMakeFiles/_dip_generate_messages_check_deps_pid_driver.dir/rule
+
+# Convenience name for target.
+_dip_generate_messages_check_deps_pid_driver: dip/CMakeFiles/_dip_generate_messages_check_deps_pid_driver.dir/rule
+
+.PHONY : _dip_generate_messages_check_deps_pid_driver
+
+# fast build rule for target.
+_dip_generate_messages_check_deps_pid_driver/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/_dip_generate_messages_check_deps_pid_driver.dir/build.make dip/CMakeFiles/_dip_generate_messages_check_deps_pid_driver.dir/build
+.PHONY : _dip_generate_messages_check_deps_pid_driver/fast
+
+# Convenience name for target.
+dip/CMakeFiles/dip_generate_messages_eus.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/dip_generate_messages_eus.dir/rule
+.PHONY : dip/CMakeFiles/dip_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+dip_generate_messages_eus: dip/CMakeFiles/dip_generate_messages_eus.dir/rule
+
+.PHONY : dip_generate_messages_eus
+
+# fast build rule for target.
+dip_generate_messages_eus/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_generate_messages_eus.dir/build.make dip/CMakeFiles/dip_generate_messages_eus.dir/build
+.PHONY : dip_generate_messages_eus/fast
+
+# Convenience name for target.
 dip/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule:
 	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
 .PHONY : dip/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
@@ -286,36 +451,6 @@ tf2_msgs_generate_messages_cpp: dip/CMakeFiles/tf2_msgs_generate_messages_cpp.di
 tf2_msgs_generate_messages_cpp/fast:
 	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build.make dip/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build
 .PHONY : tf2_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-dip/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
-	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-.PHONY : dip/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_py: dip/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_py
-
-# fast build rule for target.
-sensor_msgs_generate_messages_py/fast:
-	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make dip/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-.PHONY : sensor_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-dip/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : dip/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_py: dip/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_py
-
-# fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make dip/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 dip/CMakeFiles/experiment3.dir/rule:
@@ -393,6 +528,21 @@ geometry_msgs_generate_messages_eus/fast:
 .PHONY : geometry_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
+dip/CMakeFiles/dip_genlisp.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/dip_genlisp.dir/rule
+.PHONY : dip/CMakeFiles/dip_genlisp.dir/rule
+
+# Convenience name for target.
+dip_genlisp: dip/CMakeFiles/dip_genlisp.dir/rule
+
+.PHONY : dip_genlisp
+
+# fast build rule for target.
+dip_genlisp/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_genlisp.dir/build.make dip/CMakeFiles/dip_genlisp.dir/build
+.PHONY : dip_genlisp/fast
+
+# Convenience name for target.
 dip/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule:
 	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
 .PHONY : dip/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
@@ -408,19 +558,49 @@ tf2_msgs_generate_messages_eus/fast:
 .PHONY : tf2_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-dip/CMakeFiles/experiment4.dir/rule:
-	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/experiment4.dir/rule
-.PHONY : dip/CMakeFiles/experiment4.dir/rule
+dip/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+.PHONY : dip/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-experiment4: dip/CMakeFiles/experiment4.dir/rule
+sensor_msgs_generate_messages_py: dip/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
 
-.PHONY : experiment4
+.PHONY : sensor_msgs_generate_messages_py
 
 # fast build rule for target.
-experiment4/fast:
-	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/experiment4.dir/build.make dip/CMakeFiles/experiment4.dir/build
-.PHONY : experiment4/fast
+sensor_msgs_generate_messages_py/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make dip/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+.PHONY : sensor_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+dip/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : dip/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_py: dip/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_py
+
+# fast build rule for target.
+geometry_msgs_generate_messages_py/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make dip/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+.PHONY : geometry_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+dip/CMakeFiles/dip_geneus.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/dip_geneus.dir/rule
+.PHONY : dip/CMakeFiles/dip_geneus.dir/rule
+
+# Convenience name for target.
+dip_geneus: dip/CMakeFiles/dip_geneus.dir/rule
+
+.PHONY : dip_geneus
+
+# fast build rule for target.
+dip_geneus/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_geneus.dir/build.make dip/CMakeFiles/dip_geneus.dir/build
+.PHONY : dip_geneus/fast
 
 # Convenience name for target.
 dip/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
@@ -468,6 +648,21 @@ sensor_msgs_generate_messages_cpp/fast:
 .PHONY : sensor_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
+dip/CMakeFiles/dip2_node.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/dip2_node.dir/rule
+.PHONY : dip/CMakeFiles/dip2_node.dir/rule
+
+# Convenience name for target.
+dip2_node: dip/CMakeFiles/dip2_node.dir/rule
+
+.PHONY : dip2_node
+
+# fast build rule for target.
+dip2_node/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip2_node.dir/build.make dip/CMakeFiles/dip2_node.dir/build
+.PHONY : dip2_node/fast
+
+# Convenience name for target.
 dip/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
 	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
 .PHONY : dip/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
@@ -481,6 +676,111 @@ sensor_msgs_generate_messages_eus: dip/CMakeFiles/sensor_msgs_generate_messages_
 sensor_msgs_generate_messages_eus/fast:
 	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make dip/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
 .PHONY : sensor_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+dip/CMakeFiles/dip_gennodejs.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/dip_gennodejs.dir/rule
+.PHONY : dip/CMakeFiles/dip_gennodejs.dir/rule
+
+# Convenience name for target.
+dip_gennodejs: dip/CMakeFiles/dip_gennodejs.dir/rule
+
+.PHONY : dip_gennodejs
+
+# fast build rule for target.
+dip_gennodejs/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_gennodejs.dir/build.make dip/CMakeFiles/dip_gennodejs.dir/build
+.PHONY : dip_gennodejs/fast
+
+# Convenience name for target.
+dip/CMakeFiles/dip_generate_messages_lisp.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/dip_generate_messages_lisp.dir/rule
+.PHONY : dip/CMakeFiles/dip_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+dip_generate_messages_lisp: dip/CMakeFiles/dip_generate_messages_lisp.dir/rule
+
+.PHONY : dip_generate_messages_lisp
+
+# fast build rule for target.
+dip_generate_messages_lisp/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_generate_messages_lisp.dir/build.make dip/CMakeFiles/dip_generate_messages_lisp.dir/build
+.PHONY : dip_generate_messages_lisp/fast
+
+# Convenience name for target.
+dip/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+.PHONY : dip/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_lisp: dip/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_lisp
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_lisp/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make dip/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
+.PHONY : actionlib_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+dip/CMakeFiles/dip_generate_messages.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/dip_generate_messages.dir/rule
+.PHONY : dip/CMakeFiles/dip_generate_messages.dir/rule
+
+# Convenience name for target.
+dip_generate_messages: dip/CMakeFiles/dip_generate_messages.dir/rule
+
+.PHONY : dip_generate_messages
+
+# fast build rule for target.
+dip_generate_messages/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_generate_messages.dir/build.make dip/CMakeFiles/dip_generate_messages.dir/build
+.PHONY : dip_generate_messages/fast
+
+# Convenience name for target.
+dip/CMakeFiles/experiment1.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/experiment1.dir/rule
+.PHONY : dip/CMakeFiles/experiment1.dir/rule
+
+# Convenience name for target.
+experiment1: dip/CMakeFiles/experiment1.dir/rule
+
+.PHONY : experiment1
+
+# fast build rule for target.
+experiment1/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/experiment1.dir/build.make dip/CMakeFiles/experiment1.dir/build
+.PHONY : experiment1/fast
+
+# Convenience name for target.
+dip/CMakeFiles/dip_gencpp.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/dip_gencpp.dir/rule
+.PHONY : dip/CMakeFiles/dip_gencpp.dir/rule
+
+# Convenience name for target.
+dip_gencpp: dip/CMakeFiles/dip_gencpp.dir/rule
+
+.PHONY : dip_gencpp
+
+# fast build rule for target.
+dip_gencpp/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_gencpp.dir/build.make dip/CMakeFiles/dip_gencpp.dir/build
+.PHONY : dip_gencpp/fast
+
+# Convenience name for target.
+dip/CMakeFiles/dipLib.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/dipLib.dir/rule
+.PHONY : dip/CMakeFiles/dipLib.dir/rule
+
+# Convenience name for target.
+dipLib: dip/CMakeFiles/dipLib.dir/rule
+
+.PHONY : dipLib
+
+# fast build rule for target.
+dipLib/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dipLib.dir/build.make dip/CMakeFiles/dipLib.dir/build
+.PHONY : dipLib/fast
 
 # Convenience name for target.
 dip/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
@@ -513,64 +813,19 @@ tf2_msgs_generate_messages_py/fast:
 .PHONY : tf2_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-dip/CMakeFiles/dipLib.dir/rule:
-	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/dipLib.dir/rule
-.PHONY : dip/CMakeFiles/dipLib.dir/rule
+dip/CMakeFiles/dip_generate_messages_nodejs.dir/rule:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/dip_generate_messages_nodejs.dir/rule
+.PHONY : dip/CMakeFiles/dip_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-dipLib: dip/CMakeFiles/dipLib.dir/rule
+dip_generate_messages_nodejs: dip/CMakeFiles/dip_generate_messages_nodejs.dir/rule
 
-.PHONY : dipLib
+.PHONY : dip_generate_messages_nodejs
 
 # fast build rule for target.
-dipLib/fast:
-	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dipLib.dir/build.make dip/CMakeFiles/dipLib.dir/build
-.PHONY : dipLib/fast
-
-# Convenience name for target.
-dip/CMakeFiles/dip.dir/rule:
-	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/dip.dir/rule
-.PHONY : dip/CMakeFiles/dip.dir/rule
-
-# Convenience name for target.
-dip: dip/CMakeFiles/dip.dir/rule
-
-.PHONY : dip
-
-# fast build rule for target.
-dip/fast:
-	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip.dir/build.make dip/CMakeFiles/dip.dir/build
-.PHONY : dip/fast
-
-# Convenience name for target.
-dip/CMakeFiles/experiment1.dir/rule:
-	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/experiment1.dir/rule
-.PHONY : dip/CMakeFiles/experiment1.dir/rule
-
-# Convenience name for target.
-experiment1: dip/CMakeFiles/experiment1.dir/rule
-
-.PHONY : experiment1
-
-# fast build rule for target.
-experiment1/fast:
-	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/experiment1.dir/build.make dip/CMakeFiles/experiment1.dir/build
-.PHONY : experiment1/fast
-
-# Convenience name for target.
-dip/CMakeFiles/experiment2.dir/rule:
-	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f CMakeFiles/Makefile2 dip/CMakeFiles/experiment2.dir/rule
-.PHONY : dip/CMakeFiles/experiment2.dir/rule
-
-# Convenience name for target.
-experiment2: dip/CMakeFiles/experiment2.dir/rule
-
-.PHONY : experiment2
-
-# fast build rule for target.
-experiment2/fast:
-	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/experiment2.dir/build.make dip/CMakeFiles/experiment2.dir/build
-.PHONY : experiment2/fast
+dip_generate_messages_nodejs/fast:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_generate_messages_nodejs.dir/build.make dip/CMakeFiles/dip_generate_messages_nodejs.dir/build
+.PHONY : dip_generate_messages_nodejs/fast
 
 include/dipLib/dipLib.o: include/dipLib/dipLib.cpp.o
 
@@ -599,6 +854,60 @@ include/dipLib/dipLib.cpp.s:
 	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dipLib.dir/build.make dip/CMakeFiles/dipLib.dir/include/dipLib/dipLib.cpp.s
 .PHONY : include/dipLib/dipLib.cpp.s
 
+src/color_split.o: src/color_split.cpp.o
+
+.PHONY : src/color_split.o
+
+# target to build an object file
+src/color_split.cpp.o:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_node.dir/build.make dip/CMakeFiles/dip_node.dir/src/color_split.cpp.o
+.PHONY : src/color_split.cpp.o
+
+src/color_split.i: src/color_split.cpp.i
+
+.PHONY : src/color_split.i
+
+# target to preprocess a source file
+src/color_split.cpp.i:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_node.dir/build.make dip/CMakeFiles/dip_node.dir/src/color_split.cpp.i
+.PHONY : src/color_split.cpp.i
+
+src/color_split.s: src/color_split.cpp.s
+
+.PHONY : src/color_split.s
+
+# target to generate assembly for a file
+src/color_split.cpp.s:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_node.dir/build.make dip/CMakeFiles/dip_node.dir/src/color_split.cpp.s
+.PHONY : src/color_split.cpp.s
+
+src/cv_thread.o: src/cv_thread.cpp.o
+
+.PHONY : src/cv_thread.o
+
+# target to build an object file
+src/cv_thread.cpp.o:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_node.dir/build.make dip/CMakeFiles/dip_node.dir/src/cv_thread.cpp.o
+.PHONY : src/cv_thread.cpp.o
+
+src/cv_thread.i: src/cv_thread.cpp.i
+
+.PHONY : src/cv_thread.i
+
+# target to preprocess a source file
+src/cv_thread.cpp.i:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_node.dir/build.make dip/CMakeFiles/dip_node.dir/src/cv_thread.cpp.i
+.PHONY : src/cv_thread.cpp.i
+
+src/cv_thread.s: src/cv_thread.cpp.s
+
+.PHONY : src/cv_thread.s
+
+# target to generate assembly for a file
+src/cv_thread.cpp.s:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_node.dir/build.make dip/CMakeFiles/dip_node.dir/src/cv_thread.cpp.s
+.PHONY : src/cv_thread.cpp.s
+
 src/dip.o: src/dip.cpp.o
 
 .PHONY : src/dip.o
@@ -625,6 +934,141 @@ src/dip.s: src/dip.cpp.s
 src/dip.cpp.s:
 	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip.dir/build.make dip/CMakeFiles/dip.dir/src/dip.cpp.s
 .PHONY : src/dip.cpp.s
+
+src/dip1_node.o: src/dip1_node.cpp.o
+
+.PHONY : src/dip1_node.o
+
+# target to build an object file
+src/dip1_node.cpp.o:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip1_node.dir/build.make dip/CMakeFiles/dip1_node.dir/src/dip1_node.cpp.o
+.PHONY : src/dip1_node.cpp.o
+
+src/dip1_node.i: src/dip1_node.cpp.i
+
+.PHONY : src/dip1_node.i
+
+# target to preprocess a source file
+src/dip1_node.cpp.i:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip1_node.dir/build.make dip/CMakeFiles/dip1_node.dir/src/dip1_node.cpp.i
+.PHONY : src/dip1_node.cpp.i
+
+src/dip1_node.s: src/dip1_node.cpp.s
+
+.PHONY : src/dip1_node.s
+
+# target to generate assembly for a file
+src/dip1_node.cpp.s:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip1_node.dir/build.make dip/CMakeFiles/dip1_node.dir/src/dip1_node.cpp.s
+.PHONY : src/dip1_node.cpp.s
+
+src/dip2_node.o: src/dip2_node.cpp.o
+
+.PHONY : src/dip2_node.o
+
+# target to build an object file
+src/dip2_node.cpp.o:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip2_node.dir/build.make dip/CMakeFiles/dip2_node.dir/src/dip2_node.cpp.o
+.PHONY : src/dip2_node.cpp.o
+
+src/dip2_node.i: src/dip2_node.cpp.i
+
+.PHONY : src/dip2_node.i
+
+# target to preprocess a source file
+src/dip2_node.cpp.i:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip2_node.dir/build.make dip/CMakeFiles/dip2_node.dir/src/dip2_node.cpp.i
+.PHONY : src/dip2_node.cpp.i
+
+src/dip2_node.s: src/dip2_node.cpp.s
+
+.PHONY : src/dip2_node.s
+
+# target to generate assembly for a file
+src/dip2_node.cpp.s:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip2_node.dir/build.make dip/CMakeFiles/dip2_node.dir/src/dip2_node.cpp.s
+.PHONY : src/dip2_node.cpp.s
+
+src/dip3_node.o: src/dip3_node.cpp.o
+
+.PHONY : src/dip3_node.o
+
+# target to build an object file
+src/dip3_node.cpp.o:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip3_node.dir/build.make dip/CMakeFiles/dip3_node.dir/src/dip3_node.cpp.o
+.PHONY : src/dip3_node.cpp.o
+
+src/dip3_node.i: src/dip3_node.cpp.i
+
+.PHONY : src/dip3_node.i
+
+# target to preprocess a source file
+src/dip3_node.cpp.i:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip3_node.dir/build.make dip/CMakeFiles/dip3_node.dir/src/dip3_node.cpp.i
+.PHONY : src/dip3_node.cpp.i
+
+src/dip3_node.s: src/dip3_node.cpp.s
+
+.PHONY : src/dip3_node.s
+
+# target to generate assembly for a file
+src/dip3_node.cpp.s:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip3_node.dir/build.make dip/CMakeFiles/dip3_node.dir/src/dip3_node.cpp.s
+.PHONY : src/dip3_node.cpp.s
+
+src/dip4_node.o: src/dip4_node.cpp.o
+
+.PHONY : src/dip4_node.o
+
+# target to build an object file
+src/dip4_node.cpp.o:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip4_node.dir/build.make dip/CMakeFiles/dip4_node.dir/src/dip4_node.cpp.o
+.PHONY : src/dip4_node.cpp.o
+
+src/dip4_node.i: src/dip4_node.cpp.i
+
+.PHONY : src/dip4_node.i
+
+# target to preprocess a source file
+src/dip4_node.cpp.i:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip4_node.dir/build.make dip/CMakeFiles/dip4_node.dir/src/dip4_node.cpp.i
+.PHONY : src/dip4_node.cpp.i
+
+src/dip4_node.s: src/dip4_node.cpp.s
+
+.PHONY : src/dip4_node.s
+
+# target to generate assembly for a file
+src/dip4_node.cpp.s:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip4_node.dir/build.make dip/CMakeFiles/dip4_node.dir/src/dip4_node.cpp.s
+.PHONY : src/dip4_node.cpp.s
+
+src/dip_process.o: src/dip_process.cpp.o
+
+.PHONY : src/dip_process.o
+
+# target to build an object file
+src/dip_process.cpp.o:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_node.dir/build.make dip/CMakeFiles/dip_node.dir/src/dip_process.cpp.o
+.PHONY : src/dip_process.cpp.o
+
+src/dip_process.i: src/dip_process.cpp.i
+
+.PHONY : src/dip_process.i
+
+# target to preprocess a source file
+src/dip_process.cpp.i:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_node.dir/build.make dip/CMakeFiles/dip_node.dir/src/dip_process.cpp.i
+.PHONY : src/dip_process.cpp.i
+
+src/dip_process.s: src/dip_process.cpp.s
+
+.PHONY : src/dip_process.s
+
+# target to generate assembly for a file
+src/dip_process.cpp.s:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_node.dir/build.make dip/CMakeFiles/dip_node.dir/src/dip_process.cpp.s
+.PHONY : src/dip_process.cpp.s
 
 src/drawImageHistogram.o: src/drawImageHistogram.cpp.o
 
@@ -761,6 +1205,114 @@ src/experiment4.cpp.s:
 	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/experiment4.dir/build.make dip/CMakeFiles/experiment4.dir/src/experiment4.cpp.s
 .PHONY : src/experiment4.cpp.s
 
+src/line_detect.o: src/line_detect.cpp.o
+
+.PHONY : src/line_detect.o
+
+# target to build an object file
+src/line_detect.cpp.o:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_node.dir/build.make dip/CMakeFiles/dip_node.dir/src/line_detect.cpp.o
+.PHONY : src/line_detect.cpp.o
+
+src/line_detect.i: src/line_detect.cpp.i
+
+.PHONY : src/line_detect.i
+
+# target to preprocess a source file
+src/line_detect.cpp.i:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_node.dir/build.make dip/CMakeFiles/dip_node.dir/src/line_detect.cpp.i
+.PHONY : src/line_detect.cpp.i
+
+src/line_detect.s: src/line_detect.cpp.s
+
+.PHONY : src/line_detect.s
+
+# target to generate assembly for a file
+src/line_detect.cpp.s:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_node.dir/build.make dip/CMakeFiles/dip_node.dir/src/line_detect.cpp.s
+.PHONY : src/line_detect.cpp.s
+
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_node.dir/build.make dip/CMakeFiles/dip_node.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_node.dir/build.make dip/CMakeFiles/dip_node.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_node.dir/build.make dip/CMakeFiles/dip_node.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
+src/pid_calc.o: src/pid_calc.cpp.o
+
+.PHONY : src/pid_calc.o
+
+# target to build an object file
+src/pid_calc.cpp.o:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_node.dir/build.make dip/CMakeFiles/dip_node.dir/src/pid_calc.cpp.o
+.PHONY : src/pid_calc.cpp.o
+
+src/pid_calc.i: src/pid_calc.cpp.i
+
+.PHONY : src/pid_calc.i
+
+# target to preprocess a source file
+src/pid_calc.cpp.i:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_node.dir/build.make dip/CMakeFiles/dip_node.dir/src/pid_calc.cpp.i
+.PHONY : src/pid_calc.cpp.i
+
+src/pid_calc.s: src/pid_calc.cpp.s
+
+.PHONY : src/pid_calc.s
+
+# target to generate assembly for a file
+src/pid_calc.cpp.s:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_node.dir/build.make dip/CMakeFiles/dip_node.dir/src/pid_calc.cpp.s
+.PHONY : src/pid_calc.cpp.s
+
+src/pill_detect.o: src/pill_detect.cpp.o
+
+.PHONY : src/pill_detect.o
+
+# target to build an object file
+src/pill_detect.cpp.o:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_node.dir/build.make dip/CMakeFiles/dip_node.dir/src/pill_detect.cpp.o
+.PHONY : src/pill_detect.cpp.o
+
+src/pill_detect.i: src/pill_detect.cpp.i
+
+.PHONY : src/pill_detect.i
+
+# target to preprocess a source file
+src/pill_detect.cpp.i:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_node.dir/build.make dip/CMakeFiles/dip_node.dir/src/pill_detect.cpp.i
+.PHONY : src/pill_detect.cpp.i
+
+src/pill_detect.s: src/pill_detect.cpp.s
+
+.PHONY : src/pill_detect.s
+
+# target to generate assembly for a file
+src/pill_detect.cpp.s:
+	cd /home/szf/DIP/dip_ws/build && $(MAKE) -f dip/CMakeFiles/dip_node.dir/build.make dip/CMakeFiles/dip_node.dir/src/pill_detect.cpp.s
+.PHONY : src/pill_detect.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -771,42 +1323,80 @@ help:
 	@echo "... install/local"
 	@echo "... install"
 	@echo "... list_install_components"
-	@echo "... actionlib_msgs_generate_messages_cpp"
-	@echo "... drawImageHistogram"
-	@echo "... actionlib_msgs_generate_messages_lisp"
+	@echo "... edit_cache"
 	@echo "... test"
+	@echo "... dip_node"
+	@echo "... dip4_node"
+	@echo "... dip3_node"
+	@echo "... dip1_node"
+	@echo "... experiment4"
+	@echo "... experiment2"
+	@echo "... drawImageHistogram"
+	@echo "... dip"
+	@echo "... dip_genpy"
+	@echo "... dip_generate_messages_py"
+	@echo "... actionlib_msgs_generate_messages_cpp"
+	@echo "... dip_generate_messages_cpp"
 	@echo "... tf2_msgs_generate_messages_nodejs"
 	@echo "... tf2_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... actionlib_msgs_generate_messages_eus"
+	@echo "... _dip_generate_messages_check_deps_pid_driver"
+	@echo "... dip_generate_messages_eus"
 	@echo "... tf2_msgs_generate_messages_cpp"
-	@echo "... sensor_msgs_generate_messages_py"
-	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... experiment3"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... dip_genlisp"
 	@echo "... rebuild_cache"
 	@echo "... tf2_msgs_generate_messages_eus"
-	@echo "... experiment4"
+	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... geometry_msgs_generate_messages_py"
+	@echo "... dip_geneus"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... actionlib_msgs_generate_messages_py"
 	@echo "... sensor_msgs_generate_messages_cpp"
+	@echo "... dip2_node"
 	@echo "... sensor_msgs_generate_messages_eus"
+	@echo "... dip_gennodejs"
+	@echo "... dip_generate_messages_lisp"
+	@echo "... actionlib_msgs_generate_messages_lisp"
+	@echo "... dip_generate_messages"
+	@echo "... experiment1"
+	@echo "... dip_gencpp"
+	@echo "... dipLib"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... tf2_msgs_generate_messages_py"
-	@echo "... dipLib"
-	@echo "... dip"
-	@echo "... experiment1"
-	@echo "... experiment2"
-	@echo "... edit_cache"
+	@echo "... dip_generate_messages_nodejs"
 	@echo "... include/dipLib/dipLib.o"
 	@echo "... include/dipLib/dipLib.i"
 	@echo "... include/dipLib/dipLib.s"
+	@echo "... src/color_split.o"
+	@echo "... src/color_split.i"
+	@echo "... src/color_split.s"
+	@echo "... src/cv_thread.o"
+	@echo "... src/cv_thread.i"
+	@echo "... src/cv_thread.s"
 	@echo "... src/dip.o"
 	@echo "... src/dip.i"
 	@echo "... src/dip.s"
+	@echo "... src/dip1_node.o"
+	@echo "... src/dip1_node.i"
+	@echo "... src/dip1_node.s"
+	@echo "... src/dip2_node.o"
+	@echo "... src/dip2_node.i"
+	@echo "... src/dip2_node.s"
+	@echo "... src/dip3_node.o"
+	@echo "... src/dip3_node.i"
+	@echo "... src/dip3_node.s"
+	@echo "... src/dip4_node.o"
+	@echo "... src/dip4_node.i"
+	@echo "... src/dip4_node.s"
+	@echo "... src/dip_process.o"
+	@echo "... src/dip_process.i"
+	@echo "... src/dip_process.s"
 	@echo "... src/drawImageHistogram.o"
 	@echo "... src/drawImageHistogram.i"
 	@echo "... src/drawImageHistogram.s"
@@ -822,6 +1412,18 @@ help:
 	@echo "... src/experiment4.o"
 	@echo "... src/experiment4.i"
 	@echo "... src/experiment4.s"
+	@echo "... src/line_detect.o"
+	@echo "... src/line_detect.i"
+	@echo "... src/line_detect.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/pid_calc.o"
+	@echo "... src/pid_calc.i"
+	@echo "... src/pid_calc.s"
+	@echo "... src/pill_detect.o"
+	@echo "... src/pill_detect.i"
+	@echo "... src/pill_detect.s"
 .PHONY : help
 
 

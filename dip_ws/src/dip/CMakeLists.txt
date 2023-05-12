@@ -15,10 +15,23 @@ find_package(catkin REQUIRED COMPONENTS
   tf2
   cv_bridge
   geometry_msgs
+  message_generation
 )
 find_package(OpenCV REQUIRED)
-
+find_package(Threads REQUIRED)
 find_package(Eigen3 REQUIRED)
+
+set(CMAKE_CXX_STANDARD 14)
+
+add_message_files(
+  FILES
+  pid_driver.msg
+)
+
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
@@ -109,10 +122,7 @@ find_package(Eigen3 REQUIRED)
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES dip
-#  CATKIN_DEPENDS roscpp rospy std_msgs tf tf2
-#  DEPENDS system_lib
+ CATKIN_DEPENDS roscpp rospy std_msgs tf tf2 message_runtime
 )
 
 ###########
@@ -132,6 +142,7 @@ set( ThirdParty
         ${catkin_LIBRARIES}
         ${OpenCV_LIBRARIES}
         ${Eigen_LIBRARIES}
+        ${CMAKE_THREAD_LIBS_INIT}
 )
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
@@ -203,6 +214,47 @@ target_link_libraries(experiment4
     dipLib
 )
 
+
+add_executable(dip1_node src/dip1_node.cpp)
+target_link_libraries(dip1_node
+    ${ThirdParty}
+    dipLib
+)
+
+add_executable(dip2_node src/dip2_node.cpp)
+target_link_libraries(dip2_node
+    ${ThirdParty}
+    dipLib
+)
+
+add_executable(dip3_node src/dip3_node.cpp)
+target_link_libraries(dip3_node
+    ${ThirdParty}
+    dipLib
+)
+
+add_executable(dip4_node src/dip4_node.cpp)
+target_link_libraries(dip4_node
+    ${ThirdParty}
+    dipLib
+)
+
+
+add_executable(${PROJECT_NAME}_node 
+    src/main.cpp
+    src/color_split.cpp
+    src/line_detect.cpp
+    src/dip_process.cpp
+    src/pill_detect.cpp
+    src/pid_calc.cpp
+    src/cv_thread.cpp
+)
+
+target_link_libraries(${PROJECT_NAME}_node
+    ${OpenCV_LIBS}
+    ${catkin_LIBRARIES}
+    ${CMAKE_THREAD_LIBS_INIT}
+)
 #add_executable(expr1 src/expr1.cpp include/dipLib/expr1.hpp)
 #target_link_libraries(expr1 ${catkin_LIBRARIES} ${OpenCV_LIBS})
 #add_dependencies(expr1 ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})

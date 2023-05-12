@@ -77,7 +77,7 @@ int main(int argc,char **argv)
 	ros::init(argc, argv, "trafficLaneTrack"); //初始化ROS节点
 	ros::NodeHandle n;
 
-    ros::Rate loop_rate(10); // 速度发布频率
+    // ros::Rate loop_rate(10); // 速度发布频率
 	ros::Publisher pub = n.advertise<geometry_msgs::Twist>("/smoother_cmd_vel", 5); //定义机器人的速度发布器
 
 	if (!capture.isOpened())
@@ -87,6 +87,11 @@ int main(int argc,char **argv)
 	}
     waitKey(1000);
     Mat frame;// 当前帧图片
+    cv::Mat edge_detection = imread("src/img/edge_detection.png");
+    cv::Mat circle_detection = imread("src/img/circle.png");
+
+    cv::Mat line_detection = imread("src/img/line_detecton.png");
+
     int nFrames = 0;// 图片帧数
     int frameWidth = capture.get(cv::CAP_PROP_FRAME_WIDTH);
     int frameHeight = capture.get(cv::CAP_PROP_FRAME_HEIGHT);
@@ -99,58 +104,36 @@ int main(int argc,char **argv)
 			break;
 		}
 
-        // Mat frIn = frame.clone();// 笔记本
-        Mat frIn = frame(cv::Rect(0,0,frame.cols/2,frame.rows)); // ZED左目图片
-        imshow("In",frIn);
+        Mat frIn = frame.clone();// 笔记本
+        // Mat frIn = frame(cv::Rect(0,0,frame.cols/2,frame.rows)); // ZED左目图片
+        // imshow("In",frIn);
 
         // 灰度图转换
-        cv::Mat gray_img, edge_img;
-        cvtColor(frIn, gray_img, COLOR_BGR2GRAY);
+        cv::Mat In_gray,edge_gray,line_gray,circle_gray;
+        cvtColor(frIn, In_gray, COLOR_BGR2GRAY);
+        cvtColor(edge_detection, edge_gray, COLOR_BGR2GRAY);
+        cvtColor(circle_detection, circle_gray, COLOR_BGR2GRAY);
+        cvtColor(line_detection, line_gray, COLOR_BGR2GRAY);
 
         // 边缘检测函数
-        EdgeDetector(frIn, edge_img);
+        cv::Mat edge_img,line_edge,circle_edge,In_edge;
+        EdgeDetector(edge_detection, edge_img);
+        EdgeDetector(circle_detection, circle_edge);
+        EdgeDetector(line_detection, line_edge);
+        EdgeDetector(frIn, In_edge);
         imshow("edge",edge_img);
+        imshow("In_edge",In_edge);
 
         // 线检测
-        cv::Mat line_img = frIn.clone();
-        Hough_line(edge_img, line_img);
-        imshow("line",line_img);
+        // cv::Mat line_img = frIn.clone();
+        Hough_line(line_edge, line_detection);
+        imshow("line",line_detection);
 
         // 圆检测
         cv::Mat circle_img = frIn.clone();
-        Hough_Circle(edge_img, circle_img);
-        imshow("circle",circle_img);
-        // // 线检测
-        // cv::Mat line_img = edge_img.clone();
-        // std::vector<cv::Vec2f> lines;
-        // HoughLines(edge_img, lines, 5, CV_PI/180, 150, 0, 0);
+        Hough_Circle(circle_edge, circle_detection);
+        imshow("circle",circle_detection);
 
-        // for( size_t i = 0; i < lines.size(); i++ )
-        // {
-        //     float rho = lines[i][0], theta = lines[i][1];
-        //     cv::Point pt1, pt2;
-        //     double a = cos(theta), b = sin(theta);
-        //     double x0 = a*rho, y0 = b*rho;
-        //     pt1.x = cvRound(x0 + 1000*(-b));
-        //     pt1.y = cvRound(y0 + 1000*(a));
-        //     pt2.x = cvRound(x0 - 1000*(-b));
-        //     pt2.y = cvRound(y0 - 1000*(a));
-        //     line( line_img, pt1, pt2, Scalar(0,0,255), 3, LINE_AA);
-        // }
-        // imshow("Line detection", line_img);
-
-        // // 圆检测
-        // cv::Mat circle_img = edge_img.clone();
-        // std::vector<cv::Vec3f> circles;
-        // HoughCircles(edge_img, circles, HOUGH_GRADIENT, 1, edge_img.rows/8, 200, 100, 0, 0);
-        // // imshow("circles",circles);
-        // for( size_t i = 0; i < circles.size(); i++ )
-        // {
-        //     cv::Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
-        //     int radius = cvRound(circles[i][2]);
-        //     circle( circle_img, center, radius, Scalar(0,0,255), 3, LINE_AA);
-        // }
-        // imshow("Circle detection", circle_img);
 
         ros::spinOnce();
         waitKey(5);
